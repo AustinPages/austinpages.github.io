@@ -1,1 +1,82 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+  <title>Austin Pyne - 2025 Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Header background only for index page */
+    .header-bg {
+      background-image: url('http://img.freepik.com/free-vector/circles-background-dark-tones_60389-166.jpg?semt=ais_hybrid&w=740&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* Dark overlay to make text readable */
+    .header-bg::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5); /* 50% opacity black overlay */
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2; /* Above overlay */
+      text-align: center;
+    }
+
+    /* Button styling */
+    .header-content .w3-button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="writing.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">WRITING</a>
+    <a href="math.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MATH</a>
+    <a href="reading.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">READING</a>
+    <a href="projects.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
+    <a href="coding.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CODING</a>
+  </div>
+</div>
+
+<!-- Home Page -->
+<header class="header-bg" style="margin-top:46px">
+  <div class="header-content">
+    <h1 class="w3-jumbo w3-animate-top">Austin Pyne - 2025 Portfolio</h1>
+    <p class="w3-xlarge">A showcase of my learning, creativity, and achievements</p>
+    <a href="writing.html" class="w3-button w3-black w3-padding-large">Explore My Work</a>
+  </div>
+</header>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-padding-32 w3-light-grey w3-opacity w3-large">
+  <p>© 2025 Austin Pyne. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
