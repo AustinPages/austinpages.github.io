@@ -1,62 +1,161 @@
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #fafafa;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+
+@@ -9,7 +9,7 @@
+:root {
+  --bg: transparent;
+  --bg-glass: rgba(255,255,255,0.25);
+  --text: #000000;
+  --text: ##ffffff;
+  --text-soft: #222222;
+  --accent: #4b4bff;
+  --accent2: #7a5bff;
+@@ -21,7 +21,7 @@
+[data-theme="dark"] {
+  --bg: transparent;
+  --bg-glass: rgba(40,40,55,0.25);
+  --text: #000000;
+  --text: ##ffffff;
+  --text-soft: #222222;
+  --accent: #6a6aff;
+  --accent2: #ff6ac0;
+@@ -59,140 +59,140 @@
+  border-radius: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 1)
 }
 
-header {
-  background-color: #214c74;
-  color: white;
-  padding: 1.5em 0;
-  text-align: center;
+/* --------------------- LIQUID GLASS BASE --------------------- */
+.glass, header, footer, section, article, nav {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px var(--shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  width: min(90%, 1200px);
+  transition: background 0.4s, border 0.4s;
 }
 
-header h1 {
-  margin-bottom: 0.5em;
+/* --------------------- GENERIC TEXT STYLING --------------------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-weight: 800;
 }
 
-nav a {
-  color: white;
-  margin: 0 1em;
+p {
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+}
+
+/* --------------------- GENERIC BUTTONS --------------------- */
+button, a, input[type="submit"] {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: white !important;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 40px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+button:hover, a:hover, input[type="submit"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.25);
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* --------------------- AUTO CARD LAYOUT --------------------- */
+section article, div.card, .auto-card {
+  border-radius: 20px;
+  background: var(--card);
+  padding: 1.8rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+section article:hover, div.card:hover, .auto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow);
 }
 
-main {
-  max-width: 900px;
-  margin: 2em auto;
-  padding: 0 1.5em;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* ------------------ RESPONSIVE GRID SYSTEM ------------------ */
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-main section {
-  margin-bottom: 2em;
+/* ----------------------- GENERIC NAV ----------------------- */
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+  color: var(--text);
+  margin: 0 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
 }
 
-h2 {
-  color: #214c74;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.3em;
+/* ------------------- FLOAT ANIMATION ------------------- */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+.float {
+  animation: float 3s ease-in-out infinite;
 }
 
-ul {
-  padding-left: 1.5em;
+/* --------------------- DARK/LIGHT TOGGLE --------------------- */
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-footer {
-  text-align: center;
-  padding: 1.5em 0;
-  background-color: #f1f1f1;
-  font-size: 0.9em;
-  margin-top: 3em;
-  color: #444;
+/* --------------------- AUTO DARK MODE SUPPORT --------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: transparent;
+    --bg-glass: rgba(30, 30, 30, 0.26);
+    --text: #fff;
+    --text-soft: #e8e8e8;
+    --accent: #6a6aff;
+    --accent2: #ff6ac0;
+    --card: rgba(30,30,30,0.16);
+    --border: rgba(255,255,255,0.1);
+    --shadow: rgba(0,0,0,0.4);
+  }
 }
