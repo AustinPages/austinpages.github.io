@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term 2 Documents</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <style>
+        body {
+            margin-top: 70px; /* adjust if you have a fixed navbar */
+        }
+        .document-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Content -->
+<div class="w3-content w3-padding-64" style="max-width:900px; margin:auto;">
+    <h1 class="w3-center w3-wide">Term 4 Documents</h1>
+    <p class="w3-center w3-opacity"><i>Access your important documents below</i></p>
+
+    <ul class="w3-ul w3-card-4 w3-hover-shadow document-list">
+        <li class="w3-padding">
+            <a href="https://docs.google.com/document/d/1UObBjyyncmBfGehFTzIq-UJXwBsiuIylAnfFKYBVKt8/edit?tab=t.0" target="_blank" class="w3-button w3-block w3-light-grey w3-hover-blue">
+                1925 School Reflection
+            </a>
+        </li>
+        <li class="w3-padding">
+            <a href="https://docs.google.com/document/d/1kXaKY-DxL4kusgsP1vkeGVyrC6BVJvbfF7zASPNzvak/edit?tab=t.0" target="_blank" class="w3-button w3-block w3-light-grey w3-hover-blue">
+                History of New Zealand
+            </a>
+        </li>
+        <li class="w3-padding">
+            <a href="https://docs.google.com/document/d/1m68JjCDfMj22k5-aqtndPNPa8vot88kQJ065QH_QGsQ/view?tab=t.0" target="_blank" class="w3-button w3-block w3-light-grey w3-hover-blue">
+                Squid Game X Gladiators
+            </a>
+        </li>
+        <li class="w3-padding">
+            <a href="https://docs.google.com/document/d/1q8U6ZvZghBIQ_h5pVXNO5QZ9GUwahE_LhEvTEJdZnnc/edit?tab=t.0" target="_blank" class="w3-button w3-block w3-light-grey w3-hover-blue">
+                Matariki/Term Two Reflection
+</div>
+
+</body>
+</html>
